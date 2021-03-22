@@ -27,7 +27,7 @@ def hello_world():
 @app.route('/cal', methods = ["POST"])
 def cal():
     filePath = request.form.get("filePath")
-    print(r'显示图片')
+    # print(r'显示图片')
     return picture_show(filePath)
 
 @app.route('/search', methods = ["POST"])
@@ -36,7 +36,7 @@ def search():
     baseDataPath = request.form.get("basePath")
     threshold = request.form.get('threshold')
     print(threshold)
-    print(r'搜索相似案例')
+    # print(r'搜索相似案例')
     return retrieval_similar_cases(filePath, baseDataPath, threshold)
 
 @app.route('/deep', methods = ["POST"])
@@ -44,7 +44,7 @@ def deep():
     filePath = request.form.get("filePath")
     inputData = request.form.get("inputData")
     infoData = str(request.form.get('infoData'))
-    print(r'深度解析（雷达图）')
+    # print(r'深度解析（雷达图）')
     return compute_similar(filePath, inputData, infoData);
 
 @app.route('/real', methods = ["POST"])
@@ -52,13 +52,13 @@ def real():
     filePath = request.form.get("filePath")
     casePath = request.form.get("casePath")
     infoData = str(request.form.get('infoData'))
-    print(r'真实布局')
+    # print(r'真实布局')
     return real_layout(casePath, filePath, infoData)
 
 @app.route('/path', methods = ["POST"])
 def path():
     filePath = request.form.get("filePath")
-    print(r'轨迹识别')
+    # print(r'轨迹识别')
     return identification(filePath)
 
 @app.route('/analysis', methods= ["POST"])
