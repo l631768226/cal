@@ -36,7 +36,7 @@ def search():
     baseDataPath = request.form.get("basePath")
     threshold = request.form.get('threshold')
     print(threshold)
-    # print(r'搜索相似案例')
+    print(r'搜索相似案例')
     return retrieval_similar_cases(filePath, baseDataPath, threshold)
 
 @app.route('/deep', methods = ["POST"])
