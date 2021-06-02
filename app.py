@@ -6,13 +6,14 @@ from all_code import real_layout
 from flask import request
 from py_trace import identification
 
-from sf_active import data_analysis
-from sf_active import period_mining
-from sf_active import activity_semantic_recognition
+from backup import data_analysis
+from backup import period_mining
+from backup import activity_semantic_recognition
 
 from zb_model import predict
 
 import os
+# os.chdir(r'/yanshiSYS/building')
 os.chdir(r'E:/building')
 data_path = './data/1.shp'
 cases_path = './cases/residential_mo.shp'
@@ -80,6 +81,8 @@ def activity():
     distPath2 = request.form.get("distPath2")
     distPath3 = request.form.get("distPath3")
     userId = request.form.get("userId")
+    print(distPath2)
+    print(distPath3)
     activity_semantic_recognition(distPath2, distPath3, int(userId))
     return 'OK'
 

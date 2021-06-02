@@ -33,6 +33,15 @@ def predict(path, filepath, user_id=1, num=3):
 
     Res_true = y[0:num]
     Res_pre = label_encoder.inverse_transform(pre_label)
+    vectorPath = os.path.join(filepath, 'Semantic_vector.csv')
+    vector = pd.read_csv(vectorPath)
+    name = vector['place_name'].values
+    vec = vector['Semantic vector'].values
+    Sem_Vec = []
+    for i in range(len(place)):
+        for j in range(len(name)):
+            if place[i] == name[j]:
+                Sem_Vec.append(vec[j])
 
     temp = {'user': pre_data['user'].values[0:num],
             'lat': pre_data['lat'].values[0:num],
@@ -41,9 +50,10 @@ def predict(path, filepath, user_id=1, num=3):
             'place_name': place,
             'true_label': Res_true,
             'predict_label': Res_pre,
+            'Semantic_vector': Sem_Vec,
             }
     df = pd.DataFrame(temp, columns=['user', 'lat', 'lng', 'hot_value', 'place_name',
-                                     'true_label', 'predict_label'])
+                                     'true_label', 'predict_label', 'Semantic_vector'])
     dist_path = os.path.join(filepath, 'result.csv')
     df.to_csv(dist_path, index=False)
 
