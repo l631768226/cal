@@ -9,7 +9,6 @@ import math
 import matplotlib
 
 matplotlib.use('TKAgg')
-
 for k in range(0, 9):
     print(k)
     pd_csv = pd.read_csv('E:/cluster' + str(k) + '-case-DEGs.csv')
