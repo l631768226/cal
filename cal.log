@@ -1,0 +1,40 @@
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+Traceback (most recent call last):
+  File "E:\program\conda\envs\picTest\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "E:\program\conda\envs\picTest\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\__main__.py", line 15, in <module>
+    main(as_module=True)
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\cli.py", line 967, in main
+    cli.main(args=sys.argv[1:], prog_name="python -m flask" if as_module else None)
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\cli.py", line 586, in main
+    return super(FlaskGroup, self).main(*args, **kwargs)
+  File "E:\program\conda\envs\picTest\lib\site-packages\click\core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "E:\program\conda\envs\picTest\lib\site-packages\click\core.py", line 1259, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "E:\program\conda\envs\picTest\lib\site-packages\click\core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "E:\program\conda\envs\picTest\lib\site-packages\click\core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "E:\program\conda\envs\picTest\lib\site-packages\click\decorators.py", line 73, in new_func
+    return ctx.invoke(f, obj, *args, **kwargs)
+  File "E:\program\conda\envs\picTest\lib\site-packages\click\core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\cli.py", line 848, in run_command
+    app = DispatchingApp(info.load_app, use_eager_loading=eager_loading)
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\cli.py", line 305, in __init__
+    self._load_unlocked()
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\cli.py", line 330, in _load_unlocked
+    self._app = rv = self.loader()
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\cli.py", line 392, in load_app
+    app = locate_app(self, import_name, None, raise_if_not_found=False)
+  File "E:\program\conda\envs\picTest\lib\site-packages\flask\cli.py", line 240, in locate_app
+    __import__(module_name)
+  File "E:\Proj\py\cal\app.py", line 16, in <module>
+    os.chdir(r'/yanshiSYS/building')
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: '/yanshiSYS/building'
